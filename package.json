@@ -5,7 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:github":"npm run delete:docs && npm run build:href && npm run copy:dist",
+    "build:href": "vue-cli-service build --base-href ./",
+    "delete:docs":"del docs",
+    "copy:dist":"copyfiles dist/* ./docs -f"
   },
   "dependencies": {
     "artplayer": "^5.0.9",
